@@ -1,2 +1,2 @@
-# info-primelogic.github.io
-primelogic
+# primelogicの紹介用HP（info-primelogic.github.io）
+primelogicの紹介用HP
