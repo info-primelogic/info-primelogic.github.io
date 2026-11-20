@@ -32,16 +32,14 @@
   }
   </script>
 
-  <!-- Google Analytics (GA4) ※G-XXXXXXXXXX を測定IDに書き換えてコメントを外してください -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W9C3GG6D"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
   </script>
-  -->
+  <!-- End Google Tag Manager -->
 
   <style>
     * { box-sizing: border-box; }
@@ -110,7 +108,7 @@
       <p style="margin:0 0 10px;font-size:14px;font-weight:700">中小企業さまのIT化や費用削減などの課題へのソリューションを提供します。</p>
       <p style="margin:0 0 16px;font-size:14px;font-weight:500">IT化やDX、AIはあくまで各企業さまの目的を達成するための手段にすぎません。<br>我々は、各企業さまに合ったソリューションの提供を効率的に行います。</p>
       <p style="margin:0 0 28px;font-size:13px;font-weight:500;opacity:0.95">Praime logic代表：渡辺</p>
-      <a href="#solution" class="btn">提供するサービスの一覧へ</a>
+      <a href="#solution" class="btn" data-ga="cta_to_solution">提供するサービスの一覧へ</a>
     </div>
   </header>
 
@@ -142,7 +140,7 @@
       </div>
 
       <div style="text-align:center;margin-top:44px">
-        <a href="#consult" class="btn btn-wide">ご相談フォームはこちら</a>
+        <a href="#consult" class="btn btn-wide" data-ga="cta_to_consult">ご相談フォームはこちら</a>
       </div>
     </section>
 
@@ -181,7 +179,7 @@
       </div>
 
       <div style="text-align:center;margin-top:44px">
-        <a href="./profile.html" class="btn btn-wide">詳しい経歴はこちら</a>
+        <a href="./profile.html" class="btn btn-wide" data-ga="cta_to_profile_detail">詳しい経歴はこちら</a>
       </div>
     </section>
 
@@ -191,15 +189,29 @@
         <p style="margin:0 0 24px;font-size:13px">ご相談・お問い合わせは専用フォームより受け付けております。</p>
         <a href="https://forms.gle/Uc2WETTS5TcrLH4U9" target="_blank" rel="noopener noreferrer" class="btn btn-wide" data-ga="cta_form_submit">ご相談フォームを開く</a>
         <p style="margin:20px 0 0;font-size:11px;text-align:left">
-          <a href="./terms.html" style="text-decoration:underline">利用規約</a>・<a href="./privacy.html" style="text-decoration:underline">プライバシーポリシー</a>をお読みの上、送信してください。
+          <a href="./terms.html" style="text-decoration:underline" data-ga="link_terms">利用規約</a>・<a href="./privacy.html" style="text-decoration:underline" data-ga="link_privacy">プライバシーポリシー</a>をお読みの上、送信してください。
         </p>
       </div>
     </section>
   </main>
 
   <footer style="padding:20px 24px;text-align:center;font-size:12px;color:#44506A">
-    © Praime logic ｜ <a href="./privacy.html">プライバシーポリシー</a> ｜ <a href="./terms.html">利用規約</a>
+    © Praime logic ｜ <a href="./privacy.html" data-ga="footer_privacy">プライバシーポリシー</a> ｜ <a href="./terms.html" data-ga="footer_terms">特定商取引法に基づく表記</a>
   </footer>
+
+  <script>
+    document.querySelectorAll('[data-ga]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'click_cta',
+          cta_name: el.getAttribute('data-ga'),
+          link_text: el.textContent.trim(),
+          page_path: window.location.pathname
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

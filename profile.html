@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W9C3GG6D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+  <!-- End Google Tag Manager -->
+
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -413,9 +422,23 @@
 
     <!-- トップページへ戻るボタン -->
     <div class="back-area">
-      <a href="./index.html" class="btn-back">トップページへ戻る</a>
+      <a href="./index.html" class="btn-back" data-ga="back_to_top">トップページへ戻る</a>
     </div>
   </main>
+
+  <script>
+    document.querySelectorAll('[data-ga]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'click_cta',
+          cta_name: el.getAttribute('data-ga'),
+          link_text: el.textContent.trim(),
+          page_path: window.location.pathname
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
