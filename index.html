@@ -72,30 +72,6 @@
       padding: 13px 64px;
       min-width: 260px;
     }
-    input, textarea {
-      box-sizing: border-box;
-      width: 100%;
-      background: #CFE4E7;
-      border: 0;
-      padding: 12px 10px;
-      font-size: 14px;
-      font-family: inherit;
-      color: #1F2A33;
-    }
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      margin: 14px 0 6px;
-    }
-    .req {
-      background: #C62828;
-      color: #fff;
-      font-size: 10px;
-      padding: 1px 5px;
-      border-radius: 2px;
-      margin-left: 6px;
-    }
     .hero {
       min-height: 440px;
       display: flex;
@@ -121,6 +97,9 @@
       height: 1px;
       background: #9ACBD0;
       margin: 14px auto 18px;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -155,7 +134,7 @@
         </div>
 
         <div style="display:flex;flex-direction:column">
-          <img src="./assets/1bcb090c39ef49a15a9282610ba32e87.svg" alt="業務フロー自動化のイラスト" style="width:100%;height:150px;object-fit:cover;display:block">
+          <img src="./assets/1bcb090c39ef49a15a9282610ba32e87.png" alt="業務フロー自動化のイラスト" style="width:100%;height:150px;object-fit:cover;display:block">
           <h3 style="margin:20px 0 14px;font-size:20px;font-weight:400;text-align:center;line-height:1.5">オフィスの移転支援</h3>
           <p style="margin:0 0 16px;font-size:12.5px;flex:1">DX化やシステム化により、業務や人のブラッシュアップを行うと、オフィスの移転も可能になります。<br>それにより、固定費+従業員の方の満足度向上を目指します。<br>適切なオフィスの選定から、契約までの支援を、専門の宅建士により行うことが可能です。</p>
         </div>
@@ -164,30 +143,6 @@
 
       <div style="text-align:center;margin-top:44px">
         <a href="#consult" class="btn btn-wide">ご相談フォームはこちら</a>
-      </div>
-    </section>
-
-    <section id="consult" class="forest">
-      <h2 style="margin:0 0 20px;font-size:22px;font-weight:500;text-align:center;letter-spacing:0.1em">＼ ご相談はこちらから ／</h2>
-      <div id="form" style="max-width:520px;margin:0 auto;background:#fff;padding:12px 8px 24px">
-        <form action="[フォーム送信先URLを設定]" method="POST" style="padding:0 8px">
-          <label for="m">メールアドレス<span class="req">必須</span></label>
-          <input id="m" name="email" type="email" required placeholder="xxxx@example.com">
-
-          <label for="s">お名前（姓）<span class="req">必須</span></label>
-          <input id="s" name="last_name" type="text" required placeholder="山田">
-
-          <label for="n">お名前（名）<span class="req">必須</span></label>
-          <input id="n" name="first_name" type="text" required placeholder="太郎">
-
-          <label for="b">ご相談内容</label>
-          <textarea id="b" name="message" rows="4" placeholder="お困りごとを自由にご記入ください"></textarea>
-
-          <div style="text-align:center;margin-top:20px">
-            <button type="submit" class="btn" data-ga="cta_form_submit">送信する</button>
-          </div>
-          <p style="margin:16px 0 0;font-size:11px">利用規約・プライバシーポリシーをお読みの上、同意して送信してください。</p>
-        </form>
       </div>
     </section>
 
@@ -219,28 +174,31 @@
             <li>MSTeams,Forms,PowerApps</li>
             <li>GoogleWorkspace,Gemini,Site,Form,Analytics,AppsScript</li>
           </ul>
-          <a href="#consult" class="btn">詳しい経歴はこちら</a>
         </div>
         <div style="padding:14px;border:1px solid #9ACBD0;outline:1px solid #9ACBD0;outline-offset:5px;margin:6px">
           <img src="./assets/d188095d1bdd22247766ccd5b62a4b6a.jpg" alt="プロフィールイラスト" style="width:100%;height:auto;display:block">
         </div>
       </div>
+
+      <div style="text-align:center;margin-top:44px">
+        <a href="./profile.html" class="btn btn-wide">詳しい経歴はこちら</a>
+      </div>
     </section>
 
-    <section id="contact" style="background:#9ACBD0;padding:56px 24px;margin-top:40px">
-      <div style="max-width:540px;margin:0 auto;background:#fff;padding:32px 28px;text-align:center">
-        <h2 style="margin:0 0 12px;font-size:22px;font-weight:500">お問い合わせ</h2>
-        <p style="margin:0 0 24px;font-size:12.5px">以下からお問い合わせください。2営業日以内に折り返しご連絡いたします。<br>お急ぎの場合はお電話にて承ります。[電話番号]</p>
-        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
-          <a href="#form" class="btn" data-ga="cta_contact" style="flex:1;min-width:180px">お問い合わせ</a>
-          <a href="#consult" class="btn" data-ga="cta_newsletter" style="flex:1;min-width:180px">メルマガ登録</a>
-        </div>
+    <section id="consult" class="forest">
+      <h2 style="margin:0 0 20px;font-size:22px;font-weight:500;text-align:center;letter-spacing:0.1em">＼ ご相談はこちらから ／</h2>
+      <div id="form" style="max-width:520px;margin:0 auto;background:#fff;padding:32px 24px;text-align:center">
+        <p style="margin:0 0 24px;font-size:13px">ご相談・お問い合わせは専用フォームより受け付けております。</p>
+        <a href="https://forms.gle/Uc2WETTS5TcrLH4U9" target="_blank" rel="noopener noreferrer" class="btn btn-wide" data-ga="cta_form_submit">ご相談フォームを開く</a>
+        <p style="margin:20px 0 0;font-size:11px;text-align:left">
+          <a href="./terms.html" style="text-decoration:underline">利用規約</a>・<a href="./privacy.html" style="text-decoration:underline">プライバシーポリシー</a>をお読みの上、送信してください。
+        </p>
       </div>
     </section>
   </main>
 
   <footer style="padding:20px 24px;text-align:center;font-size:12px;color:#44506A">
-    © Praime logic ｜ プライバシーポリシー ｜ 特定商取引法に基づく表記
+    © Praime logic ｜ <a href="./privacy.html">プライバシーポリシー</a> ｜ <a href="./terms.html">利用規約</a>
   </footer>
 
 </body>

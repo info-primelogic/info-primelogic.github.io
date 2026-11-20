@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROFILE・実績・メッセージ | Praime logic</title>
+  <meta name="description" content="Praime logic 代表 プロフィール、業界別実績、およびメッセージをご紹介します。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #1F2A33;
+      background: #FAFAFA;
+      line-height: 1.9;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ヘッダーバナー */
+    .page-banner {
+      position: relative;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), #DCEAE9 url("./assets/1b144a33ffb1806ac9dfcf250aed1266.jpg") center/cover no-repeat;
+      border-bottom: 1px solid #9ACBD0;
+    }
+    .page-banner-inner {
+      text-align: center;
+      color: #1F2A33;
+      padding: 0 16px;
+    }
+    .page-banner h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+    }
+    .page-banner p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #3A4B54;
+    }
+
+    /* プロフィール導入部 */
+    .profile-intro {
+      max-width: 960px;
+      margin: 56px auto 64px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: minmax(280px, 1.35fr) minmax(240px, 0.85fr);
+      gap: 44px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .profile-intro {
+        grid-template-columns: 1fr;
+      }
+    }
+    .profile-name {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .profile-sub {
+      margin: 0 0 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .profile-text {
+      margin: 0 0 18px;
+      font-size: 13px;
+    }
+    .tool-title {
+      margin: 20px 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .tool-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+    .tool-list li {
+      margin-bottom: 2px;
+    }
+
+    /* 右側イラスト枠（二重線フレーム風） */
+    .avatar-frame {
+      position: relative;
+      padding: 10px;
+      border: 1px solid #9ACBD0;
+      background: #fff;
+    }
+    .avatar-frame::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border: 1px solid #C6E2E5;
+      pointer-events: none;
+    }
+    .avatar-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* セクション見出し */
+    .sec-head {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .sec-title-en {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+    .sec-line {
+      width: 110px;
+      height: 1px;
+      background: #9ACBD0;
+      margin: 10px auto 12px;
+    }
+    .sec-title-jp {
+      margin: 0;
+      font-size: 13px;
+      color: #44506A;
+    }
+
+    /* Achievements カード */
+    .achievements-wrap {
+      max-width: 920px;
+      margin: 0 auto 72px;
+      padding: 0 24px;
+    }
+    .ach-card {
+      position: relative;
+      background: #fff;
+      border: 1.5px solid #9ACBD0;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 28px;
+      align-items: center;
+    }
+    .ach-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -11px;
+      transform: translateX(-50%) rotate(45deg);
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-right: 1.5px solid #9ACBD0;
+      border-bottom: 1.5px solid #9ACBD0;
+    }
+    @media (max-width: 720px) {
+      .ach-card {
+        grid-template-columns: 1fr;
+        padding: 22px 20px;
+      }
+      .ach-thumb {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    }
+    .ach-heading {
+      margin: 0 0 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #9ACBD0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .ach-list {
+      margin: 0;
+      padding-left: 16px;
+      list-style: disc;
+      font-size: 13px;
+    }
+    .ach-list li {
+      margin-bottom: 4px;
+    }
+    .ach-thumb img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #E5EEF0;
+    }
+
+    /* MESSAGE 帯＆セクション */
+    .message-bar {
+      position: relative;
+      background: #9ACBD0;
+      color: #fff;
+      text-align: center;
+      padding: 18px 16px;
+    }
+    .message-bar::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%) rotate(45deg);
+      width: 18px;
+      height: 18px;
+      background: #9ACBD0;
+    }
+    .message-bar h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+    .message-bar p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      opacity: 0.95;
+    }
+
+    .message-hero {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.88) 45%, rgba(255,255,255,0.96) 100%), #EEF4F4 url("./assets/35e84ffff56894b319a3cfe3d6bed985.jpg") left center/cover no-repeat;
+      padding: 48px 24px;
+    }
+    .message-content {
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .message-box {
+      max-width: 480px;
+      text-align: center;
+    }
+    .message-lead {
+      margin: 0 0 18px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    .message-body {
+      margin: 0 0 18px;
+      font-size: 13px;
+      text-align: left;
+    }
+    .message-sign {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* 戻るボタンエリア */
+    .back-area {
+      text-align: center;
+      padding: 52px 24px 64px;
+      background: #FAFAFA;
+    }
+    .btn-back {
+      display: inline-block;
+      background: #2E7C86;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 13px 44px;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-back:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-banner">
+    <div class="page-banner-inner">
+      <h1>PROFILE</h1>
+      <p>講師プロフィール</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- プロフィール詳細 -->
+    <section class="profile-intro">
+      <div>
+        <h2 class="profile-name">ITコンサルタント</h2>
+        <p class="profile-sub">略歴</p>
+        <p class="profile-text">
+          ITコンサルタント、社内SEとして金融機関、不動産会社、保険会社などを支援してきました。<br>
+          Excelなどの従業員向け研修や、企業のDX推進としてシステム化や費用の削減が得意です。<br>
+          システム戦略や事務戦略策定、RPA導入PJ支援なども行います。
+        </p>
+
+        <p class="tool-title">【実績＆対応可能ツール】</p>
+        <ul class="tool-list">
+          <li>HP作成&amp;運用</li>
+          <li>情報セキュリティ規定整備</li>
+          <li>社内BPR</li>
+          <li>Power Point、Word、Excel</li>
+          <li>システムPJ管理</li>
+          <li>システム要件定義</li>
+          <li>RPA作成〜運用保守（UiPath,PowerAutomate(cloudflow,desktopflow)）</li>
+          <li>AI活用（ChatGPT.Copilot）</li>
+          <li>Python.HTML.CSS.VBA</li>
+          <li>Dify</li>
+          <li>WondershareFilmora, Canva</li>
+          <li>Tableau.SASEG</li>
+          <li>MSTeams,Forms,PowerApps</li>
+          <li>GoogleWorkspace,Gemini,Site,Form,Analytics,AppsScript</li>
+        </ul>
+      </div>
+
+      <div class="avatar-frame">
+        <img src="./assets/d188095d1bdd22247766ccd5b62a4b6a.jpg" alt="渡辺 プロフィールイラスト">
+      </div>
+    </section>
+
+    <!-- 実績セクション -->
+    <section class="achievements-wrap">
+      <div class="sec-head">
+        <h2 class="sec-title-en">Achievements</h2>
+        <div class="sec-line"></div>
+        <p class="sec-title-jp">実績</p>
+      </div>
+
+      <div class="ach-card">
+        <div>
+          <h3 class="ach-heading">政府系金融機関</h3>
+          <ul class="ach-list">
+            <li>事務リスク報告フォームのワークフロー構築支援および関連規定整備</li>
+            <li>情報セキュリティ運用規定整備</li>
+            <li>PC端末調達支援</li>
+            <li>デジタル戦略策定</li>
+            <li>HP構築から運用支援</li>
+          </ul>
+        </div>
+        <div class="ach-thumb">
+          <img src="./assets/achievement-bank.png" alt="政府系金融機関 BANK ビル">
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div>
+          <h3 class="ach-heading">不動産会社</h3>
+          <ul class="ach-list">
+            <li>RPA開発支援、関連規定作成</li>
+            <li>VBAツール構築</li>
+            <li>PR動画作成</li>
+            <li>SNSマーケティング支援</li>
+            <li>EUC関連規定開発支援</li>
+          </ul>
+        </div>
+        <div class="ach-thumb">
+          <img src="./assets/achievement-realestate.png" alt="不動産会社 高層ビル群">
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div>
+          <h3 class="ach-heading">生命保険会社</h3>
+          <ul class="ach-list">
+            <li>Word、Excel、ショートカットやGoogle Apps Scriptの研修（新卒や営業の方向け）</li>
+            <li>セールスフォースの導入支援</li>
+            <li>事務戦略策定</li>
+            <li>Google Apps Scriptにて事務作業の効率化フロー作成</li>
+            <li>Power Automate導入支援、関連規定整備</li>
+            <li>M365導入支援</li>
+            <li>AI導入および推進活動支援</li>
+          </ul>
+        </div>
+        <div class="ach-thumb">
+          <img src="./assets/achievement-lifeinsurance.png" alt="生命保険 Life insurance">
+        </div>
+      </div>
+    </section>
+
+    <!-- メッセージセクション -->
+    <section>
+      <div class="message-bar">
+        <h2>MESSAGE</h2>
+        <p>メッセージ</p>
+      </div>
+
+      <div class="message-hero">
+        <div class="message-content">
+          <div class="message-box">
+            <p class="message-lead">みなさんのお役に立てるように<br>尽力させていただきます。</p>
+            <p class="message-body">
+              各企業のみなさまの問題点をヒアリングにて正しく把握したうえで、必要なリソースを提供します。<br>
+              大手コンサルタントよりも安価な単価で提供することで、中小企業のみなさまのお役に立てれば嬉しいです。
+            </p>
+            <p class="message-sign">渡辺</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- トップページへ戻るボタン -->
+    <div class="back-area">
+      <a href="./index.html" class="btn-back">トップページへ戻る</a>
+    </div>
+  </main>
+
+</body>
+</html>
